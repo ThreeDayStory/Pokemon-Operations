@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635B522D242980D700339CE5 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B522C242980D700339CE5 /* ConcurrentOperation.swift */; };
 		63E0169A242955180018788C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E01699242955180018788C /* AppDelegate.swift */; };
 		63E0169C242955180018788C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E0169B242955180018788C /* SceneDelegate.swift */; };
 		63E0169E242955180018788C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E0169D242955180018788C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		635B522C242980D700339CE5 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		63E01696242955180018788C /* Pokemon-Operations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-Operations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E01699242955180018788C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E0169B242955180018788C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635B522A242980B500339CE5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				635B522B242980BF00339CE5 /* Operations */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		635B522B242980BF00339CE5 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				635B522C242980D700339CE5 /* ConcurrentOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		63E0168D242955170018788C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +76,7 @@
 			children = (
 				63E016B12429558A0018788C /* View */,
 				63E016AE2429556A0018788C /* Controller */,
+				635B522A242980B500339CE5 /* Utilities */,
 				63E016AD2429554A0018788C /* Support */,
 			);
 			path = "Pokemon-Operations";
@@ -177,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635B522D242980D700339CE5 /* ConcurrentOperation.swift in Sources */,
 				63E0169E242955180018788C /* ViewController.swift in Sources */,
 				63E0169A242955180018788C /* AppDelegate.swift in Sources */,
 				63E0169C242955180018788C /* SceneDelegate.swift in Sources */,
