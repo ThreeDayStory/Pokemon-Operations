@@ -56,15 +56,55 @@
 		63E01698242955180018788C /* Pokemon-Operations */ = {
 			isa = PBXGroup;
 			children = (
-				63E01699242955180018788C /* AppDelegate.swift */,
-				63E0169B242955180018788C /* SceneDelegate.swift */,
-				63E0169D242955180018788C /* ViewController.swift */,
-				63E0169F242955180018788C /* Main.storyboard */,
-				63E016A22429551A0018788C /* Assets.xcassets */,
-				63E016A42429551A0018788C /* LaunchScreen.storyboard */,
-				63E016A72429551A0018788C /* Info.plist */,
+				63E016B12429558A0018788C /* View */,
+				63E016AE2429556A0018788C /* Controller */,
+				63E016AD2429554A0018788C /* Support */,
 			);
 			path = "Pokemon-Operations";
+			sourceTree = "<group>";
+		};
+		63E016AD2429554A0018788C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				63E01699242955180018788C /* AppDelegate.swift */,
+				63E0169B242955180018788C /* SceneDelegate.swift */,
+				63E016A22429551A0018788C /* Assets.xcassets */,
+				63E016A72429551A0018788C /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		63E016AE2429556A0018788C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63E016AF242955710018788C /* View Controllers */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63E016AF242955710018788C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63E0169D242955180018788C /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		63E016B02429557E0018788C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				63E0169F242955180018788C /* Main.storyboard */,
+				63E016A42429551A0018788C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		63E016B12429558A0018788C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63E016B02429557E0018788C /* Storyboards */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pokemon-Operations/Info.plist";
+				INFOPLIST_FILE = "Pokemon-Operations/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pokemon-Operations/Info.plist";
+				INFOPLIST_FILE = "Pokemon-Operations/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
