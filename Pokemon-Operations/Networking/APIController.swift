@@ -5,7 +5,7 @@
 //  Created by Chad Rutherford on 3/23/20.
 //
 
-import Foundation
+import UIKit
 
 class APIController {
 	
@@ -83,6 +83,42 @@ class APIController {
 					completion(.failure(.decodeError))
 				}
 				return
+			}
+		}.resume()
+	}
+	
+	func fetchImage(for url: URL, completion: @escaping (Result<UIImage, NetworkError>) -> ()) {
+		URLSession.shared.dataTask(with: url) { data, response, error in
+			guard error == nil else {
+				DispatchQueue.main.async {
+					completion(.failure(.unableToComplete))
+				}
+				return
+			}
+			
+			if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+				DispatchQueue.main.async {
+					completion(.failure(.invalidResponse))
+				}
+				return
+			}
+			
+			guard let data = data else {
+				DispatchQueue.main.async {
+					completion(.failure(.noData))
+				}
+				return
+			}
+			
+			guard let image = UIImage(data: data) else {
+				DispatchQueue.main.async {
+					completion(.failure(.noImage))
+				}
+				return
+			}
+			
+			DispatchQueue.main.async {
+				completion(.success(image))
 			}
 		}.resume()
 	}

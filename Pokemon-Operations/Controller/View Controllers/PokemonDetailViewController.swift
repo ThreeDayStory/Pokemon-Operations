@@ -47,5 +47,14 @@ class PokemonDetailViewController: UIViewController {
 		weightLabel.text = "\(pokemon.weight)"
 		abilitiesLabel.text = pokemon.abilities
 		typesLabel.text = pokemon.types
+		apiController?.fetchImage(for: pokemon.imageURL) { [weak self] result in
+			guard let self = self else { return }
+			switch result {
+			case .success(let image):
+				self.pokemonImageView.image = image
+			case .failure(let error):
+				print(error)
+			}
+		}
 	}
 }
