@@ -25,6 +25,17 @@ class PokemonListTableViewController: UITableViewController {
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case Segues.showPokemonDetailSegue:
+			guard let pokemonDetailVC = segue.destination as? PokemonDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+			pokemonDetailVC.apiController = apiController
+			pokemonDetailVC.pokemonResult = pokemon[indexPath.row]
+		default:
+			break
+		}
+	}
+	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return pokemon.count
 	}
@@ -34,5 +45,9 @@ class PokemonListTableViewController: UITableViewController {
 		let cellPokemon = pokemon[indexPath.row]
 		cell.pokemon = cellPokemon
 		return cell
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: Segues.showPokemonDetailSegue, sender: self)
 	}
 }

@@ -11,3 +11,7 @@ enum APIKeys {
 	static let baseURL = "https://pokeapi.co/api/v2/"
 	static let pokemonEndpoint = "pokemon"
 }
+
+enum Segues {
+	static let showPokemonDetailSegue = "ShowPokemonDetailSegue"
+}

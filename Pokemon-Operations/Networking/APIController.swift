@@ -48,4 +48,42 @@ class APIController {
 			}
 		}.resume()
 	}
+	
+	func fetchPokemon(for url: URL, completion: @escaping (Result<Pokemon, NetworkError>) -> Void) {
+		URLSession.shared.dataTask(with: url) { data, response, error in
+			guard error == nil else {
+				DispatchQueue.main.async {
+					completion(.failure(.unableToComplete))
+				}
+				return
+			}
+			
+			if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+				DispatchQueue.main.async {
+					completion(.failure(.invalidResponse))
+				}
+				return
+			}
+			
+			guard let data = data else {
+				DispatchQueue.main.async {
+					completion(.failure(.noData))
+				}
+				return
+			}
+			
+			let decoder = JSONDecoder()
+			do {
+				let pokemon = try decoder.decode(Pokemon.self, from: data)
+				DispatchQueue.main.async {
+					completion(.success(pokemon))
+				}
+			} catch {
+				DispatchQueue.main.async {
+					completion(.failure(.decodeError))
+				}
+				return
+			}
+		}.resume()
+	}
 }

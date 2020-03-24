@@ -27,8 +27,11 @@ struct Pokemon: Codable {
 			case imageURL = "front_default"
 		}
 		
-		enum AbilityKeys: String, CodingKey {
-			case name
+		enum AbilitiesKeys: String, CodingKey {
+			case ability
+			enum AbilityKeys: String, CodingKey {
+				case name
+			}
 		}
 		
 		enum TypesKeys: String, CodingKey {
@@ -50,8 +53,9 @@ struct Pokemon: Codable {
 		var abilitiesContainer = try container.nestedUnkeyedContainer(forKey: .abilities)
 		var abilityString = ""
 		while !abilitiesContainer.isAtEnd {
-			let abilityContainer = try abilitiesContainer.nestedContainer(keyedBy: PokemonKeys.AbilityKeys.self)
-			let ability = try abilityContainer.decode(String.self, forKey: .name).capitalized
+			let abilitiesOuterContainer = try abilitiesContainer.nestedContainer(keyedBy: PokemonKeys.AbilitiesKeys.self)
+			let abilityInnerContainer = try abilitiesOuterContainer.nestedContainer(keyedBy: PokemonKeys.AbilitiesKeys.AbilityKeys.self, forKey: .ability)
+			let ability = try abilityInnerContainer.decode(String.self, forKey: .name).capitalized
 			abilityString += " \(ability)"
 		}
 		abilities = abilityString
@@ -60,7 +64,7 @@ struct Pokemon: Codable {
 		while !typesContainer.isAtEnd {
 			let typeOuterContainer = try typesContainer.nestedContainer(keyedBy: PokemonKeys.TypesKeys.self)
 			let typeInnerContainer = try typeOuterContainer.nestedContainer(keyedBy: PokemonKeys.TypesKeys.TypeKeys.self, forKey: .type)
-			let name = try typeInnerContainer.decode(String.self, forKey: .name)
+			let name = try typeInnerContainer.decode(String.self, forKey: .name).capitalized
 			typeString += " \(name)"
 		}
 		types = typeString
