@@ -12,8 +12,9 @@
 		635B52302429816E00339CE5 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B522F2429816E00339CE5 /* APIController.swift */; };
 		635B52332429819800339CE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B52322429819800339CE5 /* Constants.swift */; };
 		635B52362429820B00339CE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B52352429820B00339CE5 /* NetworkError.swift */; };
-		635B52392429822D00339CE5 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B52382429822D00339CE5 /* Pokemon.swift */; };
+		635B52392429822D00339CE5 /* PokemonResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B52382429822D00339CE5 /* PokemonResult.swift */; };
 		635B523C2429874D00339CE5 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B523B2429874D00339CE5 /* PokemonCell.swift */; };
+		635B523E242988CE00339CE5 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B523D242988CE00339CE5 /* Pokemon.swift */; };
 		63E0169A242955180018788C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E01699242955180018788C /* AppDelegate.swift */; };
 		63E0169C242955180018788C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E0169B242955180018788C /* SceneDelegate.swift */; };
 		63E016A1242955180018788C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E0169F242955180018788C /* Main.storyboard */; };
@@ -27,8 +28,9 @@
 		635B522F2429816E00339CE5 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		635B52322429819800339CE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		635B52352429820B00339CE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		635B52382429822D00339CE5 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		635B52382429822D00339CE5 /* PokemonResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResult.swift; sourceTree = "<group>"; };
 		635B523B2429874D00339CE5 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		635B523D242988CE00339CE5 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		63E01696242955180018788C /* Pokemon-Operations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-Operations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E01699242955180018788C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E0169B242955180018788C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +96,8 @@
 		635B52372429822200339CE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				635B52382429822D00339CE5 /* Pokemon.swift */,
+				635B52382429822D00339CE5 /* PokemonResult.swift */,
+				635B523D242988CE00339CE5 /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,10 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				635B52282429806900339CE5 /* ConcurrentOperation.swift in Sources */,
-				635B52392429822D00339CE5 /* Pokemon.swift in Sources */,
+				635B52392429822D00339CE5 /* PokemonResult.swift in Sources */,
 				635B52362429820B00339CE5 /* NetworkError.swift in Sources */,
 				63E0169A242955180018788C /* AppDelegate.swift in Sources */,
 				635B522524297FAA00339CE5 /* PokemonListTableViewController.swift in Sources */,
+				635B523E242988CE00339CE5 /* Pokemon.swift in Sources */,
 				63E0169C242955180018788C /* SceneDelegate.swift in Sources */,
 				635B52302429816E00339CE5 /* APIController.swift in Sources */,
 				635B52332429819800339CE5 /* Constants.swift in Sources */,
