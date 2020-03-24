@@ -39,10 +39,19 @@ class PokemonDetailViewController: UIViewController {
 	}
 	
 	private func updateViews(with pokemon: Pokemon) {
+		guard let apiController = apiController else { return }
 		heightLabel.text = "\(pokemon.height)"
 		weightLabel.text = "\(pokemon.weight)"
 		abilityLabel.text = pokemon.abilities
 		typeLabel.text = pokemon.types
 		// TODO: -  fetch image and display
+		apiController.fetchImage(for: pokemon.imageURL) { result in
+			switch result {
+			case .success(let image):
+				self.pokemonImageView.image = image
+			case .failure(let error):
+				print(error)
+			}
+		}
 	}
 }
