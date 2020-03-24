@@ -23,6 +23,8 @@ class PokemonDetailViewController: UIViewController {
 			fetchDetails()
 		}
 	}
+	var pokemonQueue = OperationQueue()
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,7 +37,6 @@ class PokemonDetailViewController: UIViewController {
 			switch result {
 			case .success(let pokemon):
 				self.updateViews(with: pokemon)
-				print(pokemon.weight)
 			case .failure(let error):
 				print(error)
 			}
@@ -43,18 +44,20 @@ class PokemonDetailViewController: UIViewController {
 	}
 	
 	private func updateViews(with pokemon: Pokemon) {
-		heightLabel.text = "\(pokemon.height)"
-		weightLabel.text = "\(pokemon.weight)"
-		abilitiesLabel.text = pokemon.abilities
-		typesLabel.text = pokemon.types
-		apiController?.fetchImage(for: pokemon.imageURL) { [weak self] result in
-			guard let self = self else { return }
-			switch result {
-			case .success(let image):
-				self.pokemonImageView.image = image
-			case .failure(let error):
-				print(error)
-			}
+		guard let apiController = apiController else { return }
+		
+		let imageFetchOperation = ImageFetchOperation(apiController: apiController, url: pokemon.imageURL)
+		let completionOperation = BlockOperation {
+			guard let image = imageFetchOperation.image else { return }
+			self.pokemonImageView.image = image
+			self.heightLabel.text = "\(pokemon.height)"
+			self.weightLabel.text = "\(pokemon.weight)"
+			self.abilitiesLabel.text = pokemon.abilities
+			self.typesLabel.text = pokemon.types
 		}
+		
+		completionOperation.addDependency(imageFetchOperation)
+		pokemonQueue.addOperation(imageFetchOperation)
+		OperationQueue.main.addOperation(completionOperation)
 	}
 }

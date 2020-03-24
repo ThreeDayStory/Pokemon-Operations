@@ -21,6 +21,7 @@
 		63E016A1242955180018788C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E0169F242955180018788C /* Main.storyboard */; };
 		63E016A32429551A0018788C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E016A22429551A0018788C /* Assets.xcassets */; };
 		63E016A62429551A0018788C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E016A42429551A0018788C /* LaunchScreen.storyboard */; };
+		63F0CA8324299B8100FBA9CF /* ImageFetchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0CA8224299B8100FBA9CF /* ImageFetchOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		63E016A22429551A0018788C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63E016A52429551A0018788C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63E016A72429551A0018788C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63F0CA8224299B8100FBA9CF /* ImageFetchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				635B52272429806800339CE5 /* ConcurrentOperation.swift */,
+				63F0CA8224299B8100FBA9CF /* ImageFetchOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				635B523E242988CE00339CE5 /* Pokemon.swift in Sources */,
 				63E0169C242955180018788C /* SceneDelegate.swift in Sources */,
 				635B52302429816E00339CE5 /* APIController.swift in Sources */,
+				63F0CA8324299B8100FBA9CF /* ImageFetchOperation.swift in Sources */,
 				635B52332429819800339CE5 /* Constants.swift in Sources */,
 				635B523C2429874D00339CE5 /* PokemonCell.swift in Sources */,
 			);
